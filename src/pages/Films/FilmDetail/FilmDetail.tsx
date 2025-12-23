@@ -7,7 +7,7 @@ import { useQueries } from '@tanstack/react-query';
 import { getPlanetQueryOptions } from '../../../hooks/planets/usePlanet.ts';
 import { getIdFromUrl } from '../../../utilities/string-utilities.ts';
 
-const Films = () => {
+const FilmDetail = () => {
   const { filmId } = useParams<RouteParams>();
   const { data: film, isLoading, isError } = useFilm(filmId);
 
@@ -17,7 +17,6 @@ const Films = () => {
     }),
   });
 
-  const relatedResources = ['planets', 'people', 'species', 'characters', 'starships', 'vehicles'];
   const hiddenColumns = ['title', 'url'];
 
   if (isLoading) return <Spin />;
@@ -38,9 +37,8 @@ const Films = () => {
       <Flex wrap={'wrap'} gap={'middle'}>
         {Object.entries(film || {}).map(
           ([key, value]) =>
-            ![...relatedResources, ...hiddenColumns].includes(key) && (
-              <DataEntry key={key} dataKey={key} value={value} />
-            )
+            !Array.isArray(value) &&
+            !hiddenColumns.includes(key) && <DataEntry key={key} dataKey={key} value={value} />
         )}
       </Flex>
       <Flex wrap={'wrap'} gap={'middle'}>
@@ -49,7 +47,7 @@ const Films = () => {
           value={planetQueries.map((query) => {
             return (
               query.data?.url && (
-                <Link to={`planets/${getIdFromUrl(query.data?.url)}`}>{query.data?.name}</Link>
+                <Link to={`/planets/${getIdFromUrl(query.data?.url)}`}>{query.data?.name}</Link>
               )
             );
           })}
@@ -58,4 +56,4 @@ const Films = () => {
     </Flex>
   );
 };
-export default Films;
+export default FilmDetail;

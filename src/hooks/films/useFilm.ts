@@ -9,11 +9,12 @@ const fetchFilm = async (id: string): Promise<Film> => {
   return res.json();
 };
 
+export const getFilmQueryOptions = (id?: string) => ({
+  queryKey: ['film', id],
+  queryFn: () => fetchFilm(id!),
+  staleTime: 1000 * 60,
+});
+
 export const useFilm = (id?: string) => {
-  return useQuery<Film, Error>({
-    queryKey: ['film', id],
-    queryFn: () => fetchFilm(id!),
-    enabled: !!id, // prevents running if id is undefined
-    staleTime: 1000 * 60, // 10 minutes
-  });
+  return useQuery<Film, Error>(getFilmQueryOptions(id));
 };

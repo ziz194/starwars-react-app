@@ -72,6 +72,7 @@ const Films = () => {
         pagination={{
           current: page,
           total: filmsResponse?.count,
+          showSizeChanger: false,
           onChange: (newPage) => setPage(newPage),
         }}
       />
