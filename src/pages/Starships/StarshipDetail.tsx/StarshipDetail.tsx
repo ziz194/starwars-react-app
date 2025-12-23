@@ -5,9 +5,9 @@ import ResourceDetails from '../../../components/ResourceDetails/ResourceDetails
 import { getIdFromUrl } from '../../../utilities/string-utilities';
 import { getResourceQueryOptions, useResource } from '../../../hooks/useResource';
 import RelatedResourcesEntry from '../../../components/RelatedResourcesEntry/RelatedResourcesEntry';
-import type { Film } from '../../../types/film';
-import type { Person } from '../../../types/person';
-import type { Starship } from '../../../types/starship.ts';
+import type { Starship } from '../../../types/api/starship.ts';
+import type { Film } from '../../../types/api/film.ts';
+import type { Person } from '../../../types/api/person.ts';
 
 const StarshipDetail = () => {
   const { starshipId } = useParams();

@@ -1,9 +1,9 @@
 import type { ColumnsType } from 'antd/es/table';
-import type { Film } from '../../types/film.ts';
 import { Link } from 'react-router-dom';
 import { formatDate, getIdFromUrl } from '../../utilities/string-utilities.ts';
 import * as dayjs from 'dayjs';
 import ResourceTable from '../../components/ResourceTable/ResourceTable.tsx';
+import type { Film } from '../../types/api/film.ts';
 
 const Films = () => {
   const columns: ColumnsType<Film> = [

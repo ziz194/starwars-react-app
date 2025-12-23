@@ -2,7 +2,6 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { beforeEach } from 'vitest';
 import FilmDetail from './FilmDetail.tsx';
 import { TestProviders } from '../../../utilities/test-providers.tsx';
-import { Route, Routes } from 'react-router-dom';
 import { server } from '../../../mocks/server.ts';
 import { http, HttpResponse } from 'msw';
 

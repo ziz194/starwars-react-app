@@ -1,8 +1,8 @@
 import type { ColumnsType } from 'antd/es/table';
-import type { Person } from '../../types/person';
 import { Link } from 'react-router-dom';
 import { getIdFromUrl } from '../../utilities/string-utilities';
 import ResourceTable from '../../components/ResourceTable/ResourceTable';
+import type { Person } from '../../types/api/person.ts';
 
 const People = () => {
   const columns: ColumnsType<Person> = [

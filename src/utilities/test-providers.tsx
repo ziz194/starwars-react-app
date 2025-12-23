@@ -2,7 +2,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ConfigProvider } from 'antd';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import type { ReactNode } from 'react';
-import FilmDetail from '../pages/Films/FilmDetail/FilmDetail.tsx';
 
 export function createTestQueryClient() {
   return new QueryClient({

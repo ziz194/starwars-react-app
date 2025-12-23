@@ -5,9 +5,9 @@ import ResourceDetails from '../../../components/ResourceDetails/ResourceDetails
 import { getIdFromUrl } from '../../../utilities/string-utilities';
 import { getResourceQueryOptions, useResource } from '../../../hooks/useResource';
 import RelatedResourcesEntry from '../../../components/RelatedResourcesEntry/RelatedResourcesEntry';
-import type { Film } from '../../../types/film';
-import type { Person } from '../../../types/person';
-import type { Planet } from '../../../types/planet.ts';
+import type { Planet } from '../../../types/api/planet.ts';
+import type { Film } from '../../../types/api/film.ts';
+import type { Person } from '../../../types/api/person.ts';
 
 const PlanetDetail = () => {
   const { planetId } = useParams();

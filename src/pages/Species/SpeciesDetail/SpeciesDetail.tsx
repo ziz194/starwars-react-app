@@ -5,11 +5,11 @@ import ResourceDetails from '../../../components/ResourceDetails/ResourceDetails
 import { getIdFromUrl } from '../../../utilities/string-utilities';
 import { getResourceQueryOptions, useResource } from '../../../hooks/useResource';
 import RelatedResourcesEntry from '../../../components/RelatedResourcesEntry/RelatedResourcesEntry';
-import type { Film } from '../../../types/film';
-import type { Person } from '../../../types/person';
-import type { Planet } from '../../../types/planet';
-import type { Species } from '../../../types/species.ts';
 import DataEntry from '../../../components/DataEntry/DataEntry.tsx';
+import type { Species } from '../../../types/api/species.ts';
+import type { Film } from '../../../types/api/film.ts';
+import type { Person } from '../../../types/api/person.ts';
+import type { Planet } from '../../../types/api/planet.ts';
 
 const SpeciesDetail = () => {
   const { speciesId } = useParams();
