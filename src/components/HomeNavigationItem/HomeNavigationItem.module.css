@@ -1,0 +1,15 @@
+.iconWrapper > svg {
+  width: 140px;
+  height: 140px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 220px;
+  padding: var(--ant-padding-md);
+  background-color: var(--ant-color-bg-container);
+  border-radius: 50%;
+}
