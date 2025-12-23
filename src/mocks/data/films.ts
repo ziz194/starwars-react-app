@@ -1,0 +1,36 @@
+import type { Film } from '../../types/api/film.ts';
+
+export const films: Film[] = [
+  {
+    title: 'A New Hope',
+    episode_id: 4,
+    opening_crawl: '',
+    director: 'George Lucas',
+    producer: 'Gary Kurtz',
+    release_date: '1977-05-25',
+    characters: ['https://swapi.dev/api/people/1/', 'https://swapi.dev/api/people/2/'],
+    planets: ['https://swapi.dev/api/planets/1/', 'https://swapi.dev/api/planets/2/'],
+    starships: ['https://swapi.dev/api/starships/12/', 'https://swapi.dev/api/starships/22/'],
+    vehicles: ['https://swapi.dev/api/vehicles/4/', 'https://swapi.dev/api/vehicles/6/'],
+    species: ['https://swapi.dev/api/species/1/', 'https://swapi.dev/api/species/2/'],
+    created: '',
+    edited: '',
+    url: 'https://swapi.dev/api/films/1/',
+  },
+  {
+    title: 'The Empire Strikes Back',
+    episode_id: 5,
+    opening_crawl: '',
+    director: 'Irvin Kershner',
+    producer: 'Gary Kurtz',
+    release_date: '1980-05-21',
+    characters: ['https://swapi.dev/api/people/1/', 'https://swapi.dev/api/people/3/'],
+    planets: ['https://swapi.dev/api/planets/2/'],
+    starships: ['https://swapi.dev/api/starships/12/'],
+    vehicles: ['https://swapi.dev/api/vehicles/6/'],
+    species: ['https://swapi.dev/api/species/1/'],
+    created: '',
+    edited: '',
+    url: 'https://swapi.dev/api/films/2/',
+  },
+];

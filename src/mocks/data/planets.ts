@@ -1,0 +1,36 @@
+import type { Planet } from '../../types/api/planet.ts';
+
+export const planets: Planet[] = [
+  {
+    name: 'Tatooine',
+    rotation_period: '23',
+    orbital_period: '304',
+    diameter: '10465',
+    climate: 'arid',
+    gravity: '1 standard',
+    terrain: 'desert',
+    surface_water: '1',
+    population: '200000',
+    residents: ['https://swapi.dev/api/people/1/', 'https://swapi.dev/api/people/2/'],
+    films: ['https://swapi.dev/api/films/1/', 'https://swapi.dev/api/films/2/'],
+    created: '',
+    edited: '',
+    url: 'https://swapi.dev/api/planets/1/',
+  },
+  {
+    name: 'Hoth',
+    rotation_period: '23',
+    orbital_period: '549',
+    diameter: '7200',
+    climate: 'frozen',
+    gravity: '1.1 standard',
+    terrain: 'tundra, ice caves',
+    surface_water: '100',
+    population: 'unknown',
+    residents: [],
+    films: ['https://swapi.dev/api/films/2/'],
+    created: '',
+    edited: '',
+    url: 'https://swapi.dev/api/planets/2/',
+  },
+];

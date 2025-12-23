@@ -1,0 +1,38 @@
+import type { Species } from '../../types/api/species.ts';
+
+export const species: Species[] = [
+  {
+    name: 'Human',
+    classification: 'mammal',
+    designation: 'sentient',
+    average_height: '180',
+    skin_colors: 'caucasian, black, asian',
+    hair_colors: 'blonde, brown, black',
+    eye_colors: 'brown, blue, green',
+    average_lifespan: '120',
+    homeworld: 'https://swapi.dev/api/planets/1/',
+    language: 'Galactic Basic',
+    people: ['https://swapi.dev/api/people/1/', 'https://swapi.dev/api/people/2/'],
+    films: ['https://swapi.dev/api/films/1/', 'https://swapi.dev/api/films/2/'],
+    created: '',
+    edited: '',
+    url: 'https://swapi.dev/api/species/1/',
+  },
+  {
+    name: 'Droid',
+    classification: 'artificial',
+    designation: 'sentient',
+    average_height: 'n/a',
+    skin_colors: 'n/a',
+    hair_colors: 'n/a',
+    eye_colors: 'n/a',
+    average_lifespan: 'indefinite',
+    homeworld: null,
+    language: 'n/a',
+    people: [],
+    films: ['https://swapi.dev/api/films/1/'],
+    created: '',
+    edited: '',
+    url: 'https://swapi.dev/api/species/2/',
+  },
+];

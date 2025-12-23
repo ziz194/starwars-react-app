@@ -5,13 +5,13 @@ import { useQueries } from '@tanstack/react-query';
 import { getIdFromUrl } from '../../../utilities/string-utilities.ts';
 import ResourceDetails from '../../../components/ResourceDetails/ResourceDetails.tsx';
 import { getResourceQueryOptions, useResource } from '../../../hooks/useResource.ts';
-import type { Person } from '../../../types/person.ts';
-import type { Starship } from '../../../types/starship.ts';
-import type { Species } from '../../../types/species.ts';
-import type { Vehicle } from '../../../types/vehicle.ts';
-import type { Planet } from '../../../types/planet.ts';
 import RelatedResourcesEntry from '../../../components/RelatedResourcesEntry/RelatedResourcesEntry.tsx';
-import type { Film } from '../../../types/film.ts';
+import type { Planet } from '../../../types/api/planet.ts';
+import type { Film } from '../../../types/api/film.ts';
+import type { Species } from '../../../types/api/species.ts';
+import type { Starship } from '../../../types/api/starship.ts';
+import type { Vehicle } from '../../../types/api/vehicle.ts';
+import type { Person } from '../../../types/api/person.ts';
 
 const FilmDetail = () => {
   const { filmId } = useParams<RouteParams>();
