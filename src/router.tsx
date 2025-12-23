@@ -11,9 +11,9 @@ import Starships from './pages/Starships/Starships.tsx';
 import StarshipDetail from './pages/Starships/StarshipDetail.tsx/StarshipDetail.tsx';
 import Vehicles from './pages/Vehicles/Vehicles.tsx';
 import VehicleDetail from './pages/Vehicles/VehicleDetail.tsx/VehicleDetail.tsx';
-import Species from './pages/Species/Species.tsx';
 import SpeciesDetail from './pages/Species/SpeciesDetail/SpeciesDetail.tsx';
 import PersonDetail from './pages/People/PersonDetail/PersonDetail.tsx';
+import SpeciesList from './pages/Species/SpeciesList.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -95,7 +95,7 @@ export const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Species />,
+            element: <SpeciesList />,
           },
           {
             path: ':speciesId',
