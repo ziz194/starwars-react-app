@@ -12,7 +12,7 @@ interface RelatedResourcesEntryProps<T extends Record<string, string | undefined
   titleProp?: keyof T;
 }
 
-const RelatedResourcesEntry = <T extends Record<string, string & string[]>>({
+const RelatedResourcesEntry = <T extends Record<string, string | undefined>>({
   queries,
   resource,
   label,
