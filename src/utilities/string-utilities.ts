@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 
-export const getIdFromUrl = (url: string) => url.split('/').filter(Boolean).pop();
+export const getIdFromUrl = (url: string | undefined) =>
+  url ? url.split('/').filter(Boolean).pop() : undefined;
 
 export const formatDate = (value: string): string => dayjs(value).format('DD.MM.YYYY');
 

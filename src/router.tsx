@@ -7,9 +7,13 @@ import FilmDetail from './pages/Films/FilmDetail/FilmDetail.tsx';
 import PlanetDetail from './pages/Planets/PlanetDetail/PlanetDetail.tsx';
 import Planets from './pages/Planets/Planets.tsx';
 import People from './pages/People/People.tsx';
-import PersonDetail from './pages/People/PersonDetail/PlanetDetail.tsx';
 import Starships from './pages/Starships/Starships.tsx';
 import StarshipDetail from './pages/Starships/StarshipDetail.tsx/StarshipDetail.tsx';
+import Vehicles from './pages/Vehicles/Vehicles.tsx';
+import VehicleDetail from './pages/Vehicles/VehicleDetail.tsx/VehicleDetail.tsx';
+import Species from './pages/Species/Species.tsx';
+import SpeciesDetail from './pages/Species/SpeciesDetail/SpeciesDetail.tsx';
+import PersonDetail from './pages/People/PersonDetail/PersonDetail.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -70,6 +74,32 @@ export const router = createBrowserRouter([
           {
             path: ':starshipId',
             element: <StarshipDetail />,
+          },
+        ],
+      },
+      {
+        path: 'vehicles',
+        children: [
+          {
+            index: true,
+            element: <Vehicles />,
+          },
+          {
+            path: ':vehicleId',
+            element: <VehicleDetail />,
+          },
+        ],
+      },
+      {
+        path: 'species',
+        children: [
+          {
+            index: true,
+            element: <Species />,
+          },
+          {
+            path: ':speciesId',
+            element: <SpeciesDetail />,
           },
         ],
       },

@@ -7,11 +7,11 @@ import { getResourceQueryOptions, useResource } from '../../../hooks/useResource
 import RelatedResourcesEntry from '../../../components/RelatedResourcesEntry/RelatedResourcesEntry';
 import type { Film } from '../../../types/film';
 import type { Person } from '../../../types/person';
-import type { Starship } from '../../../types/starship.ts';
+import type { Vehicle } from '../../../types/vehicle.ts';
 
-const StarshipDetail = () => {
-  const { starshipId } = useParams();
-  const { data, isPending, isError } = useResource<Starship>('starships', starshipId);
+const VehicleDetail = () => {
+  const { vehicleId } = useParams();
+  const { data, isPending, isError } = useResource<Vehicle>('vehicles', vehicleId);
 
   const filmQueries = useQueries({
     queries: (data?.films ?? []).map((url) =>
@@ -31,7 +31,7 @@ const StarshipDetail = () => {
       data={data}
       isPending={isPending}
       isError={isError}
-      backLink={{ to: '/starships', label: 'Starships' }}
+      backLink={{ to: '/vehicles', label: 'Vehicles' }}
     >
       <Flex wrap gap="middle">
         <RelatedResourcesEntry<Film>
@@ -46,4 +46,4 @@ const StarshipDetail = () => {
   );
 };
 
-export default StarshipDetail;
+export default VehicleDetail;

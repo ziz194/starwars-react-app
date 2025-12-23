@@ -1,16 +1,11 @@
-import { Breadcrumb, Flex, Table, Typography } from 'antd';
-import { useFilms } from '../../hooks/films/useFilms.ts';
 import type { ColumnsType } from 'antd/es/table';
 import type { Film } from '../../types/film.ts';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { formatDate, getIdFromUrl } from '../../utilities/string-utilities.ts';
 import * as dayjs from 'dayjs';
+import ResourceTable from '../../components/ResourceTable/ResourceTable.tsx';
 
 const Films = () => {
-  const [page, setPage] = useState(1);
-  const { data: filmsResponse, isLoading, isError } = useFilms(page);
-
   const columns: ColumnsType<Film> = [
     {
       title: 'Title',
@@ -58,25 +53,6 @@ const Films = () => {
     },
   ];
 
-  if (isError) return <Typography.Text type={'danger'}>Failed to load the films.</Typography.Text>;
-
-  return (
-    <Flex vertical>
-      <Breadcrumb items={[{ title: <Link to={'/'}>Home</Link> }, { title: 'Films' }]} />
-      <Typography.Title level={1}>Films</Typography.Title>
-      <Table
-        columns={columns}
-        dataSource={filmsResponse?.results}
-        loading={isLoading}
-        rowKey={'url'}
-        pagination={{
-          current: page,
-          total: filmsResponse?.count,
-          showSizeChanger: false,
-          onChange: (newPage) => setPage(newPage),
-        }}
-      />
-    </Flex>
-  );
+  return <ResourceTable<Film> title="Film" resource="films" columns={columns} />;
 };
 export default Films;

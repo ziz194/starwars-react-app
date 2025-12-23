@@ -4,20 +4,26 @@ import dayjs from 'dayjs';
 import type { ReactNode } from 'react';
 
 interface DataEntryProps {
-  dataKey: string;
+  label: string;
   value: string | ReactNode;
 }
-const DataEntry = ({ dataKey, value }: DataEntryProps) => {
+const DataEntry = ({ label, value }: DataEntryProps) => {
   const isDate = (str: string) =>
     dayjs(str, ['YYYY-MM-DD', 'YYYY-MM-DDTHH:mm:ss.SSSSSSZ']).isValid();
 
   return (
     <Flex vertical>
-      <Typography.Text type={'secondary'}>{transformKeyToLabel(dataKey)}</Typography.Text>
-      {typeof value === 'string' ? (
-        <Typography.Text>{isDate(value) ? formatDate(value) : value}</Typography.Text>
+      <Typography.Text type={'secondary'}>{transformKeyToLabel(label)}</Typography.Text>
+      {!value ? (
+        '-'
       ) : (
-        value
+        <>
+          {typeof value === 'string' ? (
+            <Typography.Text>{isDate(value) ? formatDate(value) : value}</Typography.Text>
+          ) : (
+            value
+          )}
+        </>
       )}
     </Flex>
   );

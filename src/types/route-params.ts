@@ -2,7 +2,7 @@ export type RouteParams = {
   filmId: string;
   planetId: string;
   personId: string;
-  characterId: string;
+  vehicleId: string;
   starshipId: string;
   speciesId: string;
 };

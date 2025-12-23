@@ -1,59 +1,89 @@
-import { Breadcrumb, Flex, Spin, Typography } from 'antd';
-import { Link, useParams } from 'react-router-dom';
-import { useFilm } from '../../../hooks/films/useFilm.ts';
+import { Flex } from 'antd';
+import { useParams } from 'react-router-dom';
 import type { RouteParams } from '../../../types/route-params.ts';
-import DataEntry from '../../../components/DataEntry/DataEntry.tsx';
 import { useQueries } from '@tanstack/react-query';
-import { getPlanetQueryOptions } from '../../../hooks/planets/usePlanet.ts';
 import { getIdFromUrl } from '../../../utilities/string-utilities.ts';
+import ResourceDetails from '../../../components/ResourceDetails/ResourceDetails.tsx';
+import { getResourceQueryOptions, useResource } from '../../../hooks/useResource.ts';
+import type { Person } from '../../../types/person.ts';
+import type { Starship } from '../../../types/starship.ts';
+import type { Species } from '../../../types/species.ts';
+import type { Vehicle } from '../../../types/vehicle.ts';
+import type { Planet } from '../../../types/planet.ts';
+import RelatedResourcesEntry from '../../../components/RelatedResourcesEntry/RelatedResourcesEntry.tsx';
+import type { Film } from '../../../types/film.ts';
 
 const FilmDetail = () => {
   const { filmId } = useParams<RouteParams>();
-  const { data: film, isLoading, isError } = useFilm(filmId);
+  const { data: film, isPending, isError } = useResource<Film>('films', filmId);
 
   const planetQueries = useQueries({
     queries: (film?.planets ?? []).map((url: string) => {
-      return getPlanetQueryOptions(getIdFromUrl(url));
+      return getResourceQueryOptions<Planet>('planets', getIdFromUrl(url));
     }),
   });
 
-  const hiddenColumns = ['title', 'url'];
+  const characterQueries = useQueries({
+    queries: (film?.characters ?? []).map((url: string) => {
+      return getResourceQueryOptions<Person>('people', getIdFromUrl(url));
+    }),
+  });
 
-  if (isLoading) return <Spin />;
+  const starshipQueries = useQueries({
+    queries: (film?.starships ?? []).map((url: string) => {
+      return getResourceQueryOptions<Starship>('starships', getIdFromUrl(url));
+    }),
+  });
 
-  if (isError)
-    return <Typography.Text type={'danger'}>Failed to load the film data.</Typography.Text>;
+  const speciesQueries = useQueries({
+    queries: (film?.species ?? []).map((url: string) => {
+      return getResourceQueryOptions<Species>('species', getIdFromUrl(url));
+    }),
+  });
+
+  const vehicleQueries = useQueries({
+    queries: (film?.vehicles ?? []).map((url: string) => {
+      return getResourceQueryOptions<Vehicle>('vehicles', getIdFromUrl(url));
+    }),
+  });
 
   return (
-    <Flex vertical gap={'middle'}>
-      <Breadcrumb
-        items={[
-          { title: <Link to={'/'}>Home</Link> },
-          { title: <Link to={'/films'}>Films</Link> },
-          { title: film?.title },
-        ]}
-      />
-      <Typography.Title level={1}>{film?.title}</Typography.Title>
+    <ResourceDetails
+      isPending={isPending}
+      isError={isError}
+      backLink={{ to: '/films', label: 'Films' }}
+      title={film?.title}
+      data={film}
+      hiddenProps={['title']}
+    >
       <Flex wrap={'wrap'} gap={'middle'}>
-        {Object.entries(film || {}).map(
-          ([key, value]) =>
-            !Array.isArray(value) &&
-            !hiddenColumns.includes(key) && <DataEntry key={key} dataKey={key} value={value} />
-        )}
-      </Flex>
-      <Flex wrap={'wrap'} gap={'middle'}>
-        <DataEntry
-          dataKey={'Planets'}
-          value={planetQueries.map((query) => {
-            return (
-              query.data?.url && (
-                <Link to={`/planets/${getIdFromUrl(query.data?.url)}`}>{query.data?.name}</Link>
-              )
-            );
-          })}
+        <RelatedResourcesEntry<Planet>
+          queries={planetQueries}
+          label={'Planets'}
+          resource={'planets'}
+        />
+        <RelatedResourcesEntry<Person>
+          queries={characterQueries}
+          label={'Characters'}
+          resource={'people'}
+        />
+        <RelatedResourcesEntry<Starship>
+          queries={starshipQueries}
+          label={'Starships'}
+          resource={'starships'}
+        />
+        <RelatedResourcesEntry<Vehicle>
+          queries={vehicleQueries}
+          label={'Vehicles'}
+          resource={'vehicles'}
+        />
+        <RelatedResourcesEntry<Species>
+          queries={speciesQueries}
+          label={'Species'}
+          resource={'species'}
         />
       </Flex>
-    </Flex>
+    </ResourceDetails>
   );
 };
 export default FilmDetail;
