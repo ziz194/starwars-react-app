@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import DataEntry from '../DataEntry/DataEntry';
 import type { ReactNode } from 'react';
 
-interface Props<T> {
+interface ResourceDetailProps<T> {
   title?: string;
   data?: T;
   isPending: boolean;
@@ -13,7 +13,7 @@ interface Props<T> {
   children?: ReactNode;
 }
 
-const ResourceDetail = <T extends Record<string, string | string[]>>({
+const ResourceDetail = <T,>({
   title,
   data,
   isPending,
@@ -21,7 +21,7 @@ const ResourceDetail = <T extends Record<string, string | string[]>>({
   backLink,
   hiddenProps,
   children,
-}: Props<T>) => {
+}: ResourceDetailProps<T>) => {
   if (isPending) return <Spin />;
 
   if (isError) {
@@ -43,7 +43,7 @@ const ResourceDetail = <T extends Record<string, string | string[]>>({
       <Flex wrap="wrap" gap="middle">
         {Object.entries(data || {}).map(
           ([key, value]) =>
-            !Array.isArray(value) &&
+            typeof value === 'string' &&
             !['url', 'name'].includes(key) &&
             !hiddenProps?.includes(key) && <DataEntry key={key} label={key} value={value} />
         )}

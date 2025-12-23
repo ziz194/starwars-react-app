@@ -5,18 +5,18 @@ import { getIdFromUrl } from '../../utilities/string-utilities';
 import { Spin } from 'antd';
 import type { ResourceType } from '../../types/resource-type';
 
-interface RelatedResourcesEntryProps<T extends Record<string, string | undefined>> {
+interface RelatedResourcesEntryProps<T extends { url: string }> {
   queries: UseQueryResult<T, Error>[];
   label: string;
   resource: ResourceType;
-  titleProp?: keyof T;
+  titleProp: keyof T;
 }
 
-const RelatedResourcesEntry = <T extends Record<string, string | undefined>>({
+const RelatedResourcesEntry = <T extends { url: string }>({
   queries,
   resource,
   label,
-  titleProp = 'name',
+  titleProp,
 }: RelatedResourcesEntryProps<T>) => {
   const isLoading = queries.some((query) => query.isPending);
 
@@ -26,12 +26,13 @@ const RelatedResourcesEntry = <T extends Record<string, string | undefined>>({
       const title = query.data?.[titleProp];
 
       if (!url || !title) return null;
-
-      return (
-        <Link key={url} to={`/${resource}/${getIdFromUrl(url)}`}>
-          {title}
-        </Link>
-      );
+      if (typeof title === 'string') {
+        return (
+          <Link key={url} to={`/${resource}/${getIdFromUrl(url)}`}>
+            {title}
+          </Link>
+        );
+      }
     })
     .filter(Boolean);
 

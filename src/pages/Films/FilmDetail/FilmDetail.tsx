@@ -61,26 +61,31 @@ const FilmDetail = () => {
           queries={planetQueries}
           label={'Planets'}
           resource={'planets'}
+          titleProp="name"
         />
         <RelatedResourcesEntry<Person>
           queries={characterQueries}
           label={'Characters'}
           resource={'people'}
+          titleProp="name"
         />
         <RelatedResourcesEntry<Starship>
           queries={starshipQueries}
           label={'Starships'}
           resource={'starships'}
+          titleProp="name"
         />
         <RelatedResourcesEntry<Vehicle>
           queries={vehicleQueries}
           label={'Vehicles'}
           resource={'vehicles'}
+          titleProp="name"
         />
         <RelatedResourcesEntry<Species>
           queries={speciesQueries}
           label={'Species'}
           resource={'species'}
+          titleProp="name"
         />
       </Flex>
     </ResourceDetails>

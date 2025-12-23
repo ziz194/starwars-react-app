@@ -74,16 +74,19 @@ const PersonDetail = () => {
           label="Vehicles"
           resource="vehicles"
           queries={vehicleQueries}
+          titleProp="name"
         />
         <RelatedResourcesEntry<Starship>
           label="Starships"
           resource="starships"
           queries={starshipQueries}
+          titleProp="name"
         />
         <RelatedResourcesEntry<Species>
           label="Species"
           resource="species"
           queries={speciesQueries}
+          titleProp="name"
         />
       </Flex>
     </ResourceDetails>

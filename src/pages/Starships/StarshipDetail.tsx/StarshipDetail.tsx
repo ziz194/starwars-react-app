@@ -40,7 +40,12 @@ const StarshipDetail = () => {
           queries={filmQueries}
           titleProp="title"
         />
-        <RelatedResourcesEntry<Person> label="Pilots" resource="people" queries={pilotQueries} />
+        <RelatedResourcesEntry<Person>
+          label="Pilots"
+          resource="people"
+          queries={pilotQueries}
+          titleProp="name"
+        />
       </Flex>
     </ResourceDetails>
   );

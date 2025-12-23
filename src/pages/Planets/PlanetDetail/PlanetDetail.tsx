@@ -43,6 +43,7 @@ const PlanetDetail = () => {
         <RelatedResourcesEntry<Person>
           label="Residents"
           resource="people"
+          titleProp="name"
           queries={residentQueries}
         />
       </Flex>

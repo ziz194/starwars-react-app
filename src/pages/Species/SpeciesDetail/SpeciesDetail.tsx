@@ -56,7 +56,12 @@ const SpeciesDetail = () => {
           queries={filmQueries}
           titleProp="title"
         />
-        <RelatedResourcesEntry<Person> label="People" resource="people" queries={peopleQueries} />
+        <RelatedResourcesEntry<Person>
+          label="People"
+          resource="people"
+          queries={peopleQueries}
+          titleProp="name"
+        />
       </Flex>
     </ResourceDetails>
   );
