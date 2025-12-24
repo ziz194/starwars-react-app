@@ -5,6 +5,8 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import prettier from 'eslint-plugin-prettier';
 import vitest from 'eslint-plugin-vitest';
+import importPlugin from "eslint-plugin-import";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
 
 export default [
   // Base JS rules
@@ -20,6 +22,8 @@ export default [
       react,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      import: importPlugin,
+      "simple-import-sort": simpleImportSort,
       prettier,
     },
     languageOptions: {
@@ -32,6 +36,12 @@ export default [
       },
     },
     settings: {
+      "import/resolver": {
+        typescript: {
+          project: "./tsconfig.json",
+          alwaysTryTypes: true,
+        },
+      },
       react: {
         version: 'detect',
       },
@@ -49,6 +59,11 @@ export default [
         { allowConstantExport: true },
       ],
 
+      // Fails on wrong paths (including `import type`)
+      "import/no-unresolved": "error",
+      // Auto-fix & sort imports
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
       // TS ergonomics
       '@typescript-eslint/no-unused-vars': [
         'warn',

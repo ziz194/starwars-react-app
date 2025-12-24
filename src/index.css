@@ -5,6 +5,10 @@
   font-weight: 400;
 }
 
+#root {
+  height: 100vh;
+}
+
 body {
   margin: 0;
   background-color: black;

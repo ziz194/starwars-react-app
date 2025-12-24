@@ -1,19 +1,20 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound.tsx';
-import Films from './pages/Films/Films.tsx';
+
 import MainLayout from './layout/MainLayout.tsx';
 import FilmDetail from './pages/Films/FilmDetail/FilmDetail.tsx';
+import Films from './pages/Films/Films.tsx';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound.tsx';
+import People from './pages/People/People.tsx';
+import PersonDetail from './pages/People/PersonDetail/PersonDetail.tsx';
 import PlanetDetail from './pages/Planets/PlanetDetail/PlanetDetail.tsx';
 import Planets from './pages/Planets/Planets.tsx';
-import People from './pages/People/People.tsx';
-import Starships from './pages/Starships/Starships.tsx';
-import StarshipDetail from './pages/Starships/StarshipDetail.tsx/StarshipDetail.tsx';
-import Vehicles from './pages/Vehicles/Vehicles.tsx';
-import VehicleDetail from './pages/Vehicles/VehicleDetail.tsx/VehicleDetail.tsx';
 import SpeciesDetail from './pages/Species/SpeciesDetail/SpeciesDetail.tsx';
-import PersonDetail from './pages/People/PersonDetail/PersonDetail.tsx';
 import SpeciesList from './pages/Species/SpeciesList.tsx';
+import StarshipDetail from './pages/Starships/StarshipDetail.tsx/StarshipDetail.tsx';
+import Starships from './pages/Starships/Starships.tsx';
+import VehicleDetail from './pages/Vehicles/VehicleDetail.tsx/VehicleDetail.tsx';
+import Vehicles from './pages/Vehicles/Vehicles.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -104,5 +105,9 @@ export const router = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ]);

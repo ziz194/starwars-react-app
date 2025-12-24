@@ -1,4 +1,4 @@
-An example react application.
+An example react application with React/Typescript and Vite.
 
 ## Run
 

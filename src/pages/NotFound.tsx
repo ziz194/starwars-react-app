@@ -1,17 +1,17 @@
-import { useRouteError, isRouteErrorResponse } from 'react-router-dom';
+import { Flex, Typography } from 'antd';
+import { Link } from 'react-router-dom';
 
-const NotFound: React.FC = () => {
-  const error = useRouteError();
+import StarwarsLogo from '../assets/starwars-logo.svg?react';
 
-  if (isRouteErrorResponse(error)) {
-    return (
-      <h1>
-        {error.status} – {error.statusText}
-      </h1>
-    );
-  }
-
-  return <h1>Something went wrong</h1>;
+const NotFound = () => {
+  return (
+    <Flex justify={'center'} vertical align={'center'} style={{ height: '100%' }}>
+      <StarwarsLogo height={200} width={400} />
+      <Typography.Title level={3}>
+        Could not find the page you are looking for, go back to the <Link to={'/'}>Home page</Link>
+      </Typography.Title>
+    </Flex>
+  );
 };
 
 export default NotFound;
