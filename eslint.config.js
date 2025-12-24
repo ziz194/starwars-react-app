@@ -22,7 +22,7 @@ export default [
   // TypeScript + React files
   {
     files: ["**/*.{ts,tsx}"],
-
+    ignores: ['dist', 'node-modules'],
     plugins: {
       react,
       "react-hooks": reactHooks,
