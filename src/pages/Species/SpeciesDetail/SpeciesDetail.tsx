@@ -2,13 +2,13 @@ import { useQueries } from '@tanstack/react-query';
 import { Flex } from 'antd';
 import { Link, useParams } from 'react-router-dom';
 
-import type { Planet } from '../../../api/planet.ts';
 import DataEntry from '../../../components/DataEntry/DataEntry.tsx';
 import RelatedResourcesEntry from '../../../components/RelatedResourcesEntry/RelatedResourcesEntry';
 import ResourceDetails from '../../../components/ResourceDetails/ResourceDetails';
 import { getResourceQueryOptions, useResource } from '../../../hooks/useResource';
 import type { Film } from '../../../types/api/film.ts';
 import type { Person } from '../../../types/api/person.ts';
+import type { Planet } from '../../../types/api/planet.ts';
 import type { Species } from '../../../types/api/species.ts';
 import { getIdFromUrl } from '../../../utilities/string-utilities';
 

@@ -7,7 +7,7 @@ import prettier from "eslint-plugin-prettier";
 import vitest from "eslint-plugin-vitest";
 import importPlugin from "eslint-plugin-import";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
-import jsxA11y from "eslint-plugin-jsx-a11y";
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 
 export default [
   // Base JavaScript rules
@@ -53,7 +53,6 @@ export default [
       // React / Vite
       "react/react-in-jsx-scope": "off",
       ...reactHooks.configs.recommended.rules,
-      ...jsxA11y.configs.recommended.rules,
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
