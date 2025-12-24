@@ -1,4 +1,5 @@
 import { http, HttpResponse } from 'msw';
+
 import { species } from '../data/species';
 
 export const speciesHandlers = [

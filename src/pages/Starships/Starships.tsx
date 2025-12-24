@@ -1,8 +1,9 @@
 import type { ColumnsType } from 'antd/es/table';
 import { Link } from 'react-router-dom';
-import { getIdFromUrl } from '../../utilities/string-utilities';
+
 import ResourceTable from '../../components/ResourceTable/ResourceTable';
 import type { Starship } from '../../types/api/starship.ts';
+import { getIdFromUrl } from '../../utilities/string-utilities';
 
 const Starships = () => {
   const columns: ColumnsType<Starship> = [

@@ -7,6 +7,7 @@ import prettier from "eslint-plugin-prettier";
 import vitest from "eslint-plugin-vitest";
 import importPlugin from "eslint-plugin-import";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
+import jsxA11y from "eslint-plugin-jsx-a11y";
 
 export default [
   // Base JavaScript rules
@@ -25,6 +26,7 @@ export default [
       "react-refresh": reactRefresh,
       import: importPlugin,
       "simple-import-sort": simpleImportSort,
+      "jsx-a11y": jsxA11y,
       prettier,
     },
 
@@ -37,7 +39,7 @@ export default [
       // Required to resolve TypeScript paths and type-only imports
       "import/resolver": {
         typescript: {
-          project: "./tsconfig.json",
+          project: "./tsconfig.app.json",
           alwaysTryTypes: true,
         },
       },
@@ -51,6 +53,7 @@ export default [
       // React / Vite
       "react/react-in-jsx-scope": "off",
       ...reactHooks.configs.recommended.rules,
+      ...jsxA11y.configs.recommended.rules,
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },

@@ -1,13 +1,14 @@
+import { useQueries } from '@tanstack/react-query';
 import { Flex } from 'antd';
 import { useParams } from 'react-router-dom';
-import { useQueries } from '@tanstack/react-query';
-import ResourceDetails from '../../../components/ResourceDetails/ResourceDetails';
-import { getIdFromUrl } from '../../../utilities/string-utilities';
-import { getResourceQueryOptions, useResource } from '../../../hooks/useResource';
+
 import RelatedResourcesEntry from '../../../components/RelatedResourcesEntry/RelatedResourcesEntry';
-import type { Vehicle } from '../../../types/api/vehicle.ts';
+import ResourceDetails from '../../../components/ResourceDetails/ResourceDetails';
+import { getResourceQueryOptions, useResource } from '../../../hooks/useResource';
 import type { Film } from '../../../types/api/film.ts';
 import type { Person } from '../../../types/api/person.ts';
+import type { Vehicle } from '../../../types/api/vehicle.ts';
+import { getIdFromUrl } from '../../../utilities/string-utilities';
 
 const VehicleDetail = () => {
   const { vehicleId } = useParams();

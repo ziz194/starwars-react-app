@@ -1,9 +1,10 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import { beforeEach } from 'vitest';
-import FilmDetail from './FilmDetail.tsx';
-import { TestProviders } from '../../../utilities/test-providers.tsx';
-import { server } from '../../../mocks/server.ts';
 import { http, HttpResponse } from 'msw';
+import { beforeEach } from 'vitest';
+
+import { server } from '../../../mocks/server.ts';
+import { TestProviders } from '../../../utilities/test-providers.tsx';
+import FilmDetail from './FilmDetail.tsx';
 
 describe('FilmsDetail', () => {
   beforeEach(() => {

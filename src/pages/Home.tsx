@@ -1,11 +1,12 @@
 import { Flex, theme } from 'antd';
 import { Typography } from 'antd';
-import StarwarsLogo from '../assets/starwars-logo.svg?react';
+
 import FilmsIcon from '../assets/darth-vader.svg?react';
-import SpeciesIcon from '../assets/species.svg?react';
 import PeopleIcon from '../assets/people.svg?react';
-import SpaceshipsIcon from '../assets/spaceship.svg?react';
 import PlanetsIcon from '../assets/planets.svg?react';
+import SpaceshipsIcon from '../assets/spaceship.svg?react';
+import SpeciesIcon from '../assets/species.svg?react';
+import StarwarsLogo from '../assets/starwars-logo.svg?react';
 import VehiclesIcon from '../assets/vehicle.svg?react';
 import HomeNavigationItem from '../components/HomeNavigationItem/HomeNavigationItem.tsx';
 

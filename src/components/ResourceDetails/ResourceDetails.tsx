@@ -1,7 +1,8 @@
 import { Breadcrumb, Flex, Spin, Typography } from 'antd';
-import { Link } from 'react-router-dom';
-import DataEntry from '../DataEntry/DataEntry';
 import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
+
+import DataEntry from '../DataEntry/DataEntry';
 
 interface ResourceDetailProps<T> {
   title?: string;

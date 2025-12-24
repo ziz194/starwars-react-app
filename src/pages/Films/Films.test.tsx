@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
+import { beforeEach } from 'vitest';
+
 import Films from '../../pages/Films/Films';
 import { TestProviders } from '../../utilities/test-providers.tsx';
-import { beforeEach } from 'vitest';
 
 describe('Films', () => {
   beforeEach(() => {

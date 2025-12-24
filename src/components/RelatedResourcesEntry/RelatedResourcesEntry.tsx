@@ -1,9 +1,10 @@
-import DataEntry from '../DataEntry/DataEntry';
 import type { UseQueryResult } from '@tanstack/react-query';
-import { Link } from 'react-router-dom';
-import { getIdFromUrl } from '../../utilities/string-utilities';
 import { Spin } from 'antd';
+import { Link } from 'react-router-dom';
+
 import type { ResourceType } from '../../types/resource-type';
+import { getIdFromUrl } from '../../utilities/string-utilities';
+import DataEntry from '../DataEntry/DataEntry';
 
 interface RelatedResourcesEntryProps<T extends { url: string }> {
   queries: UseQueryResult<T, Error>[];

@@ -1,9 +1,9 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ConfigProvider } from 'antd';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import type { ReactNode } from 'react';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
-export function createTestQueryClient() {
+const createTestQueryClient = () => {
   return new QueryClient({
     defaultOptions: {
       queries: {
@@ -12,17 +12,17 @@ export function createTestQueryClient() {
       },
     },
   });
-}
+};
 
 interface TestProvidersProps {
   component: ReactNode;
   router?: { route: string; path: string };
 }
 
-export function TestProviders({
+export const TestProviders = ({
   component,
   router = { route: '/', path: '/' },
-}: TestProvidersProps) {
+}: TestProvidersProps) => {
   const queryClient = createTestQueryClient();
 
   return (
@@ -36,4 +36,4 @@ export function TestProviders({
       </ConfigProvider>
     </QueryClientProvider>
   );
-}
+};

@@ -1,17 +1,18 @@
+import { useQueries } from '@tanstack/react-query';
 import { Flex } from 'antd';
 import { useParams } from 'react-router-dom';
-import type { RouteParams } from '../../../types/route-params.ts';
-import { useQueries } from '@tanstack/react-query';
-import { getIdFromUrl } from '../../../utilities/string-utilities.ts';
+
+import RelatedResourcesEntry from '../../../components/RelatedResourcesEntry/RelatedResourcesEntry.tsx';
 import ResourceDetails from '../../../components/ResourceDetails/ResourceDetails.tsx';
 import { getResourceQueryOptions, useResource } from '../../../hooks/useResource.ts';
-import RelatedResourcesEntry from '../../../components/RelatedResourcesEntry/RelatedResourcesEntry.tsx';
-import type { Planet } from '../../../types/api/planet.ts';
 import type { Film } from '../../../types/api/film.ts';
+import type { Person } from '../../../types/api/person.ts';
+import type { Planet } from '../../../types/api/planet.ts';
 import type { Species } from '../../../types/api/species.ts';
 import type { Starship } from '../../../types/api/starship.ts';
 import type { Vehicle } from '../../../types/api/vehicle.ts';
-import type { Person } from '../../../types/api/person.ts';
+import type { RouteParams } from '../../../types/route-params.ts';
+import { getIdFromUrl } from '../../../utilities/string-utilities.ts';
 
 const FilmDetail = () => {
   const { filmId } = useParams<RouteParams>();

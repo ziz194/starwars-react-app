@@ -1,7 +1,8 @@
 import { Flex, Typography } from 'antd';
-import { formatDate, transformKeyToLabel } from '../../utilities/string-utilities.ts';
 import dayjs from 'dayjs';
 import type { ReactNode } from 'react';
+
+import { formatDate, transformKeyToLabel } from '../../utilities/string-utilities.ts';
 
 interface DataEntryProps {
   label: string;

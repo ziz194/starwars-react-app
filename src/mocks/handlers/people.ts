@@ -1,4 +1,5 @@
 import { http, HttpResponse } from 'msw';
+
 import { people } from '../data/people';
 
 export const peopleHandlers = [

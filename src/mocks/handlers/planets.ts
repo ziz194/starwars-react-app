@@ -1,4 +1,5 @@
 import { http, HttpResponse } from 'msw';
+
 import { planets } from '../data/planets';
 
 export const planetHandlers = [

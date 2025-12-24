@@ -1,4 +1,5 @@
 import { http, HttpResponse } from 'msw';
+
 import { vehicles } from '../data/vehicles';
 
 export const vehicleHandlers = [

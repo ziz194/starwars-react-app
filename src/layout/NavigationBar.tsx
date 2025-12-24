@@ -1,16 +1,17 @@
-import { Flex, Menu, theme } from 'antd';
-import { useState } from 'react';
-import { Layout } from 'antd';
-import StarwarsLogo from '../assets/starwars-logo.svg?react';
-import useBreakpoint from 'antd/es/grid/hooks/useBreakpoint';
-import { useLocation, useNavigate } from 'react-router-dom';
-import FilmsIcon from '../assets/darth-vader.svg?react';
-import SpeciesIcon from '../assets/species.svg?react';
-import PeopleIcon from '../assets/people.svg?react';
-import SpaceshipsIcon from '../assets/spaceship.svg?react';
-import PlanetsIcon from '../assets/planets.svg?react';
-import VehiclesIcon from '../assets/vehicle.svg?react';
 import Icon from '@ant-design/icons';
+import { Flex, Menu, theme } from 'antd';
+import { Layout } from 'antd';
+import useBreakpoint from 'antd/es/grid/hooks/useBreakpoint';
+import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+import FilmsIcon from '../assets/darth-vader.svg?react';
+import PeopleIcon from '../assets/people.svg?react';
+import PlanetsIcon from '../assets/planets.svg?react';
+import SpaceshipsIcon from '../assets/spaceship.svg?react';
+import SpeciesIcon from '../assets/species.svg?react';
+import StarwarsLogo from '../assets/starwars-logo.svg?react';
+import VehiclesIcon from '../assets/vehicle.svg?react';
 
 const NavigationBar = () => {
   const {

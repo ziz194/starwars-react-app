@@ -1,7 +1,8 @@
 import { Flex, theme } from 'antd';
-import { Link } from 'react-router-dom';
-import styles from './HomeNavigationItem.module.css';
 import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
+
+import styles from './HomeNavigationItem.module.css';
 
 interface HomeNavigationItemProps {
   title: string;

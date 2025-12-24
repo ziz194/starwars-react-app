@@ -1,4 +1,4 @@
-import { getIdFromUrl, formatDate, transformKeyToLabel } from './string-utilities';
+import { formatDate, getIdFromUrl, transformKeyToLabel } from './string-utilities';
 
 describe('string utilities', () => {
   describe('getIdFromUrl', () => {

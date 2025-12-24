@@ -1,4 +1,5 @@
 import { http, HttpResponse } from 'msw';
+
 import { films } from '../data/films';
 
 export const filmHandlers = [

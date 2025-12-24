@@ -2,6 +2,7 @@ import { Breadcrumb, Flex, Table, Typography } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import { useResourceList } from '../../hooks/useResourceList';
 import type { ResourceType } from '../../types/resource-type.ts';
 
