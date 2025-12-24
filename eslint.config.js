@@ -60,7 +60,7 @@ export default [
       ],
 
       // Import correctness
-      "import/no-unresolved": ["error", { ignoreTypeImports: false }],
+      "import/no-unresolved": ["error"],
 
       // Import sorting
       "simple-import-sort/imports": "error",
